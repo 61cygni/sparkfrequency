@@ -1,25 +1,14 @@
-import * as THREE from "three";
-import { d } from "./dynoexp.ts";
-
 import { SplatGenerator, SplatTransformer, dyno } from "@sparkjsdev/spark";
 
 const {
-  add,
   combine,
   combineGsplat,
   defineGsplat,
   dynoBlock,
-  dynoVec3,
   dynoConst,
   dynoFloat,
   dynoLiteral,
-  Gsplat,
-  hashVec4,
-  vec3,
-  numberAsFloat,
-  numberAsInt,
-  typeLiteral,
-  min,
+  Gsplat
 } = dyno;
 
 export const DEFAULT_SHADER: Record<string, never> = {};

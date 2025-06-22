@@ -1,10 +1,4 @@
 import { dyno } from "@sparkjsdev/spark";
-import type {
-  DynoJsType,
-  DynoType,
-  FloatTypes,
-  VectorTypes,
-} from "@sparkjsdev/spark";
 import * as THREE from "three";
 
 // Debug flag - set to true to enable debug logging

@@ -1,14 +1,14 @@
 // --
-// Simple Wave generator using fBm
+// Dynamic Audio Visualization using FBM 
 // --
 import * as THREE from "three";
 
-import { SplatGenerator, SplatTransformer, dyno } from "@sparkjsdev/spark";
+import { dyno } from "@sparkjsdev/spark";
 
 const { mul, combine, dynoVec3, dynoConst, dynoFloat, hashVec4 } = dyno;
 
+// These are helper files to remove a bunch of the dyno / shader boilerplate
 import { d } from "./dynoexp.ts";
-
 import * as ShaderGen from "./shadergen.js";
 
 import {
@@ -19,8 +19,8 @@ import {
   VRButton,
   constructGrid,
 } from "@sparkjsdev/spark";
-import { anaglyphPass } from "three/examples/jsm/tsl/display/AnaglyphPassNode.js";
 
+// Set of global variables that are available to the shader during the render loop
 const globalSpeed = dynoFloat(1.5);
 const globalScale = dynoFloat(0.4);
 const globalFrequency = dynoFloat(0.2);
@@ -38,7 +38,7 @@ const globalRed2 = dynoFloat(0.36);
 const globalGreen2 = dynoFloat(0.36);
 const globalBlue2 = dynoFloat(0.64);
 
-function func(index, dynoTime, dynoGlobals) {
+function renderfunc(index, dynoTime, dynoGlobals) {
   const random = hashVec4(index);
   let position = dynoConst("vec3", [0, 0, 0]);
 
@@ -232,25 +232,13 @@ async function main() {
   handleResize();
   window.addEventListener("resize", handleResize);
 
-  const grid = new SplatMesh({
-    constructSplats: async (splats) =>
-      constructGrid({
-        splats,
-        extents: new THREE.Box3(
-          new THREE.Vector3(0, 0, 0),
-          new THREE.Vector3(20, 20, 20),
-        ),
-      }),
-  });
-  // scene.add(grid);
-
   const vrButton = VRButton.createButton(renderer);
   if (vrButton) {
     document.body.appendChild(vrButton);
   }
 
   const shadergen = ShaderGen.shaderBox({
-    infunc: func,
+    infunc: renderfunc,
     numSplats: 20000,
     globals: {
       anisoScale: dynoVec3(new THREE.Vector3(0.1, 0.1, 0.1)),
