@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Atmospheric</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            background-color: black;
+        }
+
+        #canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        #audio {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" src="bar.mp3" controls></audio>
+    <canvas id="canvas"></canvas>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.module.js",
+            "@sparkjsdev/spark": "https://sparkjs.dev/releases/spark/0.1.3/spark.module.js"
+           }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
