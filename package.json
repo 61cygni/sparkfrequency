@@ -1,5 +1,30 @@
 {
+  "name": "frequency",
+  "version": "1.0.0",
+  "description": "Dynamic audio visualization using Spark",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "serve": "vite serve",
+    "dev": "vite dev",
+    "clean": "rm -rf dist && rm -rf *.tsbuildinfo"
+  },
   "dependencies": {
-    "@sparkjsdev/spark": "^0.1.3"
-  }
+    "@sparkjsdev/spark": "^0.1.3",
+    "vite": "^6.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/61cygni/sparkfrequency.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/61cygni/sparkfrequency/issues"
+  },
+  "homepage": "https://github.com/61cygni/sparkfrequency#readme"
 }
