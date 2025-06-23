@@ -1,3 +1,9 @@
+//--
+// Utility function to generate a shader for the sparkjs library
+// 
+// This is a wrapper around the sparkjs library that allows for easy
+// generation of shaders for the sparkjs library.
+//--
 import { SplatGenerator, SplatTransformer, dyno } from "@sparkjsdev/spark";
 
 const {
