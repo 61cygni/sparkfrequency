@@ -1,8 +1,7 @@
 # Spark Frequency
 ![Spark Frequency Visualizer](img.gif)
 
-
-Simple audio visualizer using Sparkjs.  
+Simple audio visualizer using Sparkjs.  Example hosted [here](https://sparkfreq.netlify.app/)
 
 ## Quick Start
 
